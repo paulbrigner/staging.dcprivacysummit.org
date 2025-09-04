@@ -194,10 +194,16 @@ h5 {
 
 /* ---------- HERO REBUILD ---------- */
 .hero {
-  background: #FCF7EF;
-  /* Top / bottom padding scale smoothly with viewport height   */
-  padding-block: clamp(120px, 20vh, 260px) clamp(60px, 12vh, 180px);
+  /* Layered subtle gradients for visual depth */
+  background:
+    radial-gradient(1200px 420px at 8% -10%, rgba(229, 62, 62, 0.14), transparent 60%),
+    radial-gradient(900px 420px at 108% 0%, rgba(0, 82, 255, 0.10), transparent 60%),
+    linear-gradient(180deg, #FCF7EF 0%, #FFFFFF 100%);
+  /* Top / bottom padding scale smoothly with viewport height */
+  padding-block: clamp(120px, 20vh, 240px) clamp(60px, 12vh, 160px);
   color: var(--color-primary);
+  position: relative;
+  overflow: hidden;
 }
 
 /* 3A – Layout container */
@@ -208,6 +214,20 @@ h5 {
   gap: clamp(40px, 6vw, 96px);
 }
 
+/* Decorative blurred orb */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -140px;
+  right: -120px;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle at 30% 30%, rgba(229,62,62,0.25), rgba(0,82,255,0.18) 60%, transparent 70%);
+  filter: blur(40px);
+  transform: rotate(20deg);
+  pointer-events: none;
+}
+
 /* 3B – Text */
 .hero h5 {
   font-size: clamp(13px, 0.9vw, 15px);
@@ -216,11 +236,43 @@ h5 {
   text-transform: uppercase;
   color: #ee392c;
 }
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  line-height: 1;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.7);
+  border: 1px solid rgba(0,0,0,0.06);
+  backdrop-filter: saturate(130%) blur(4px);
+  color: #0f172a;
+  margin-bottom: 18px;
+}
+.hero-eyebrow .dot { width: 4px; height: 4px; background: #E53E3E; border-radius: 999px; display: inline-block; }
+.hero-eyebrow i { color: #E53E3E; font-size: 14px; }
 .hero h1 {
   font-size: clamp(32px, 4vw, 60px);
   line-height: 1.12;
   margin-bottom: 32px;
   font-weight: 700;
+}
+
+.hero-subtext {
+  max-width: 52ch;
+  color: #0b1220;
+  margin-bottom: 28px;
+}
+
+.cta-group { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+.btn.btn--secondary {
+  border-color: rgba(0, 82, 255, 0.35);
+  color: #0052FF;
+}
+.btn.btn--secondary:hover {
+  background: #0052FF;
+  color: #fff;
 }
 
 /* 3C – Logo block */
@@ -242,6 +294,8 @@ h5 {
   margin-bottom: 28px;     /* spacing below the logo */
   text-align: center;      /* ensures the image itself is centered */
   }
+  .hero-subtext { margin-left: auto; margin-right: auto; }
+  .hero-eyebrow { margin-left: auto; margin-right: auto; }
 }
 
 
