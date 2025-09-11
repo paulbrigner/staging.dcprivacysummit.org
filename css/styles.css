@@ -417,6 +417,21 @@ h5 {
   opacity: 1;
 }
 
+/* Sponsor Banner (single combined image) */
+.sponsor-banner {
+  margin-top: 30px;
+}
+.sponsor-banner img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid rgba(252, 71, 48, 0.2);
+  box-shadow: 0 0 8px rgba(252, 71, 48, 0.4);
+  border-radius: 8px;
+}
+
 /* Venue Descriptions */
 .venue-descriptions {
   margin-top: 40px;
