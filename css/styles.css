@@ -420,6 +420,7 @@ h5 {
 /* Sponsor Banner (single combined image) */
 .sponsor-banner {
   margin-top: 30px;
+  position: relative; /* enable positioned link overlays */
 }
 .sponsor-banner img {
   display: block;
@@ -430,6 +431,19 @@ h5 {
   border: 2px solid rgba(252, 71, 48, 0.2);
   box-shadow: 0 0 8px rgba(252, 71, 48, 0.4);
   border-radius: 8px;
+}
+
+/* Clickable hotspots over the combined sponsors image */
+.sponsor-hotspot {
+  position: absolute;
+  display: block;
+  z-index: 2;
+  /* Transparent clickable area */
+  background: rgba(0,0,0,0);
+}
+.sponsor-hotspot:focus-visible {
+  outline: 2px dashed #E53E3E;
+  outline-offset: 2px;
 }
 
 /* Venue Descriptions */
