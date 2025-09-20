@@ -597,35 +597,35 @@ a:focus-visible {
   box-shadow: 0 30px 58px rgba(15, 23, 42, 0.16);
 }
 
-.team-card img {
-  max-width: 180px;
-  margin-left: auto;
-  margin-right: auto;
-  object-fit: contain;
-  border-radius: calc(var(--border-radius-sm) + 4px);
-  display: block;
-  padding: 12px;
+.team-card-media {
   position: relative;
-  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(12px, 3vw, 18px);
+  margin: 0 auto;
+  width: 100%;
+  border-radius: calc(var(--border-radius-sm) + 6px);
   background:
-    linear-gradient(140deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0)),
-    radial-gradient(circle at 30% 20%, rgba(229, 59, 59, 0.16), transparent 65%),
-    radial-gradient(circle at 80% 20%, rgba(28, 76, 225, 0.16), transparent 60%),
-    rgba(255, 255, 255, 0.92);
-  border: 3px solid rgba(28, 76, 225, 0.18);
+    linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(237, 240, 255, 0.88)) padding-box,
+    linear-gradient(120deg, rgba(28, 76, 225, 0.35), rgba(229, 59, 59, 0.28)) border-box;
+  background-origin: padding-box, border-box;
+  background-clip: padding-box, border-box;
+  border: 2px solid transparent;
   box-shadow:
-    inset 0 0 0 1px rgba(255, 255, 255, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
     0 18px 38px rgba(15, 23, 42, 0.12);
+  max-width: clamp(180px, 22vw, 220px);
 }
 
-.team-card img::after {
-  content: "";
-  position: absolute;
-  inset: 8px;
-  border-radius: inherit;
-  background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.6), transparent 70%);
-  pointer-events: none;
-  z-index: -1;
+.team-card img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: calc(var(--border-radius-sm) + 2px);
+  display: block;
+  background: #ffffff;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
 }
 
 .team-card h4 {
@@ -646,11 +646,6 @@ a:focus-visible {
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     /* Restore the larger gap for desktop */
     gap: 40px;
-  }
-
-  /* Increase image size back to original for larger screens */
-  .team-card img {
-    max-width: 220px;
   }
 }
 
