@@ -2,9 +2,13 @@
 /* CSS Document */
 
 :root {
+  --brand-blue: #003b79;
+  --brand-red: #ee392c;
+  --brand-purple: #433863;
+  --brand-light: #f2f1f5;
   --color-primary: #102248;
   --color-secondary: #1c4ce1;
-  --color-accent: #e53b3b;
+  --color-accent: var(--brand-red);
   --color-body: #0f172a;
   --color-muted: #607099;
   --color-surface: #ffffff;
@@ -35,9 +39,9 @@ body {
   font-family: var(--font-body);
   color: var(--color-body);
   background:
-    radial-gradient(1100px 420px at -10% -20%, rgba(229, 59, 59, 0.12), transparent 65%),
-    radial-gradient(900px 460px at 112% -10%, rgba(28, 76, 225, 0.12), transparent 70%),
-    var(--color-surface-alt);
+    radial-gradient(1100px 420px at -10% -20%, rgba(0, 59, 121, 0.16), transparent 60%),
+    radial-gradient(900px 460px at 112% -10%, rgba(67, 56, 99, 0.18), transparent 70%),
+    linear-gradient(180deg, var(--brand-light) 0%, #ffffff 100%);
   line-height: 1.6;
   min-height: 100vh;
 }
@@ -206,7 +210,7 @@ nav a:focus-visible {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(16, 34, 72, 0.04), rgba(229, 59, 59, 0.05));
+  background: linear-gradient(135deg, rgba(0, 59, 121, 0.05), rgba(67, 56, 99, 0.05));
   pointer-events: none;
 }
 
@@ -232,8 +236,9 @@ h2 {
 h3 {
   font-size: 24px;
   font-weight: 500;
+  color: var(--brand-blue);
 }
-h3, h4 {
+h4 {
   color: var(--color-primary);
 }
 h5 {
@@ -271,22 +276,22 @@ a:focus-visible {
   text-decoration: none;
   box-sizing: border-box;
   border: none;
-  background: linear-gradient(125deg, var(--color-accent), #dc2626);
+  background-color: var(--brand-red);
   color: #fff;
   box-shadow: var(--shadow-soft);
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
-    background-position 0.25s ease;
-  background-size: 120%;
+    background-color 0.25s ease,
+    color 0.25s ease;
 }
 
 .btn:hover,
 .btn:focus-visible {
   transform: translateY(-4px);
-  box-shadow: 0 26px 40px rgba(229, 59, 59, 0.26);
-  background-position: 20% center;
-  color: var(--color-secondary);
+  box-shadow: 0 26px 40px rgba(238, 57, 44, 0.26);
+  background-color: #d52f22;
+  color: #fff;
 }
 
 .video-wrapper {
@@ -311,9 +316,9 @@ a:focus-visible {
 .hero {
   /* Layered subtle gradients for visual depth */
   background:
-    radial-gradient(1200px 520px at -10% -10%, rgba(229, 59, 59, 0.18), transparent 65%),
-    radial-gradient(960px 520px at 110% 10%, rgba(28, 76, 225, 0.18), transparent 70%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(244, 247, 255, 0.98) 100%);
+    radial-gradient(1200px 520px at -10% -10%, rgba(0, 59, 121, 0.26), transparent 60%),
+    radial-gradient(960px 520px at 110% 10%, rgba(67, 56, 99, 0.24), transparent 70%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, var(--brand-light) 100%);
   /* Top / bottom padding scale smoothly with viewport height */
   padding-block: clamp(48px, 10vh, 124px) clamp(44px, 8vh, 112px);
   color: var(--color-body);
@@ -336,7 +341,7 @@ a:focus-visible {
   inset: -180px -160px auto auto;
   width: 520px;
   height: 520px;
-  background: radial-gradient(circle at 30% 30%, rgba(229,59,59,0.45), rgba(28,76,225,0.22) 60%, transparent 70%);
+  background: radial-gradient(circle at 30% 30%, rgba(0, 59, 121, 0.48), rgba(67, 56, 99, 0.28) 60%, transparent 70%);
   filter: blur(60px);
   transform: rotate(12deg);
   pointer-events: none;
@@ -346,7 +351,7 @@ a:focus-visible {
   content: "";
   position: absolute;
   inset: auto -220px -260px -180px;
-  background: radial-gradient(circle at 10% 90%, rgba(28, 76, 225, 0.18), transparent 70%);
+  background: radial-gradient(circle at 10% 90%, rgba(0, 59, 121, 0.22), transparent 70%);
   filter: blur(70px);
   pointer-events: none;
 }
@@ -370,9 +375,9 @@ a:focus-visible {
   display: inline-block;
   width: 56px;
   height: 2px;
-  background: linear-gradient(120deg, var(--color-secondary), var(--color-accent));
+  background: linear-gradient(120deg, var(--brand-blue), var(--brand-red));
   border-radius: 999px;
-  box-shadow: 0 10px 24px rgba(28, 76, 225, 0.18);
+  box-shadow: 0 10px 24px rgba(0, 59, 121, 0.18);
 }
 .hero-eyebrow {
   display: inline-flex;
@@ -422,13 +427,15 @@ a:focus-visible {
 }
 
 .btn.btn--secondary {
-  background: linear-gradient(125deg, var(--color-secondary), #5b86ff);
+  background-color: var(--brand-blue);
   box-shadow: var(--shadow-soft);
+  color: #fff;
 }
 
 .btn.btn--secondary:hover,
 .btn.btn--secondary:focus-visible {
-  box-shadow: 0 24px 42px rgba(28, 76, 225, 0.24);
+  box-shadow: 0 24px 42px rgba(0, 59, 121, 0.24);
+  color: var(--brand-red);
 }
 
 /* 3C – Logo block */
@@ -437,8 +444,8 @@ a:focus-visible {
   padding: clamp(24px, 4vw, 36px);
   border-radius: calc(var(--border-radius-lg) + 6px);
   background:
-    linear-gradient(140deg, rgba(28, 76, 225, 0.12), rgba(229, 59, 59, 0.1) 65%),
-    rgba(255, 255, 255, 0.8);
+    linear-gradient(140deg, rgba(0, 59, 121, 0.16), rgba(67, 56, 99, 0.12) 65%),
+    rgba(255, 255, 255, 0.86);
   box-shadow: var(--shadow-card);
   overflow: hidden;
   isolation: isolate;
@@ -450,7 +457,7 @@ a:focus-visible {
   inset: 12% -30% auto auto;
   width: 240px;
   height: 240px;
-  background: radial-gradient(circle, rgba(28, 76, 225, 0.35), transparent 70%);
+  background: radial-gradient(circle, rgba(0, 59, 121, 0.35), transparent 70%);
   filter: blur(30px);
   pointer-events: none;
 }
@@ -461,7 +468,7 @@ a:focus-visible {
   inset: auto auto -25% -35%;
   width: 260px;
   height: 260px;
-  background: radial-gradient(circle, rgba(229, 59, 59, 0.28), transparent 70%);
+  background: radial-gradient(circle, rgba(238, 57, 44, 0.2), transparent 70%);
   filter: blur(40px);
   pointer-events: none;
 }
@@ -532,7 +539,7 @@ a:focus-visible {
   inset: auto -30% -50% auto;
   width: 220px;
   height: 220px;
-  background: radial-gradient(circle, rgba(28, 76, 225, 0.18), transparent 70%);
+  background: radial-gradient(circle, rgba(0, 59, 121, 0.16), transparent 70%);
   filter: blur(40px);
   pointer-events: none;
 }
@@ -702,7 +709,7 @@ a:focus-visible {
   }
 }
 .venue-desc h3 {
-  color: var(--color-secondary);
+  color: var(--brand-blue);
   margin-bottom: 8px;
   font-size: 20px;
 }
@@ -712,7 +719,7 @@ a:focus-visible {
 }
 @media (min-width: 768px) {
   .venue-desc + .venue-desc {
-    border-left: 2px solid rgba(28, 76, 225, 0.16);
+    border-left: 2px solid rgba(0, 59, 121, 0.16);
     padding-left: 20px;
   }
 }
@@ -923,8 +930,8 @@ footer a:hover {
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  border-color: rgba(28, 76, 225, 0.4);
-  box-shadow: 0 0 0 3px rgba(28, 76, 225, 0.15);
+  border-color: rgba(0, 59, 121, 0.4);
+  box-shadow: 0 0 0 3px rgba(0, 59, 121, 0.15);
 }
 .contact-form textarea { resize: vertical; }
 .contact-form button {
@@ -943,7 +950,7 @@ footer a:hover {
 .contact-form button:hover,
 .contact-form button:focus-visible {
   transform: translateY(-3px);
-  box-shadow: 0 24px 40px rgba(28, 76, 225, 0.25);
+  box-shadow: 0 24px 40px rgba(0, 59, 121, 0.25);
 }
 #responseMessage {
   margin-top: 20px;
