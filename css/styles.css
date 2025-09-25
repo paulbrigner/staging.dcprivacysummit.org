@@ -284,6 +284,7 @@ a:focus-visible {
     box-shadow 0.25s ease,
     background-color 0.25s ease,
     color 0.25s ease;
+  cursor: pointer;
 }
 
 .btn:hover,
@@ -291,7 +292,7 @@ a:focus-visible {
   transform: translateY(-4px);
   box-shadow: 0 26px 40px rgba(238, 57, 44, 0.26);
   background-color: #d52f22;
-  color: #fff;
+  color: var(--brand-blue);
 }
 
 .video-wrapper {
@@ -435,6 +436,7 @@ a:focus-visible {
 .btn.btn--secondary:hover,
 .btn.btn--secondary:focus-visible {
   box-shadow: 0 24px 42px rgba(0, 59, 121, 0.24);
+  background-color: #002d5f;
   color: var(--brand-red);
 }
 
@@ -915,6 +917,11 @@ footer a:hover {
   font-size: 14px;
   color: var(--color-body);
 }
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
 .contact-form input,
 .contact-form textarea {
   width: 100%;
@@ -934,23 +941,9 @@ footer a:hover {
   box-shadow: 0 0 0 3px rgba(0, 59, 121, 0.15);
 }
 .contact-form textarea { resize: vertical; }
-.contact-form button {
-  width: 100%;
-  padding: 14px;
-  border: none;
-  border-radius: var(--border-radius-sm);
-  background: #003b79;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: var(--shadow-soft);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.contact-form button:hover,
-.contact-form button:focus-visible {
-  transform: translateY(-3px);
-  box-shadow: 0 24px 40px rgba(0, 59, 121, 0.25);
+.contact-form .contact-form__submit {
+  margin-top: 12px;
+  align-self: center;
 }
 #responseMessage {
   margin-top: 20px;

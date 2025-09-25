@@ -10,7 +10,11 @@
 <meta property="og:url" content="https://dcprivacysummit.org/">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="./fonts/fontawesome/css/all.min.css" />
-<link href="./favicon.ico" rel="icon" type="image/x-icon"/>
+<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+<link rel="manifest" href="./site.webmanifest">
+<link rel="icon" type="image/x-icon" href="./favicon.ico">
 <link href="./css/styles.css" rel="stylesheet">
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&amp;family=Poppins:wght@500&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
@@ -376,7 +380,7 @@
         <label for="message">Message</label>
         <textarea id="message" name="message" rows="5" required></textarea>
 
-        <button type="submit" id="submitButton">Send&nbsp;Message</button>
+        <button type="submit" id="submitButton" class="btn btn--secondary contact-form__submit">Send&nbsp;Message</button>
       </form>
       <div id="responseMessage"></div>
     </div>
