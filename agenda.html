@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Explore the discussion panels and keynote sessions planned for the 2025 DC Privacy Summit.">
+  <meta property="og:title" content="Agenda – DC Privacy Summit">
+  <meta property="og:description" content="Preview the panels and keynote sessions planned for the 2025 DC Privacy Summit.">
+  <meta property="og:image" content="https://dcprivacysummit.org/images/logo_300x300.png">
+  <meta property="og:url" content="https://dcprivacysummit.org/agenda.html">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="./fonts/fontawesome/css/all.min.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+  <link rel="manifest" href="./site.webmanifest">
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+  <title>Agenda – DC Privacy Summit</title>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&amp;family=Poppins:wght@500&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
+  <link href="./css/styles.css" rel="stylesheet">
+</head>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (menuToggle && navMenu) {
+      menuToggle.addEventListener('click', () => {
+        const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', String(!expanded));
+        navMenu.classList.toggle('active');
+      });
+    }
+  });
+</script>
+
+<body>
+<!-- Header -->
+<header>
+  <a href="/"><img src="images/DCPrivacySummit_wordmark_white.svg" alt="DC Privacy Summit logo" class="logo"></a>
+  <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+  <nav aria-label="Main" class="nav-menu">
+    <ul>
+      <li><a href="index.html#speakers">Speakers</a></li>
+      <li><a href="agenda.html" aria-current="page">Agenda</a></li>
+      <li><a href="index.html#sponsors">Sponsors</a></li>
+      <li><a href="index.html#venue">Venue</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="live-stream/index.html">2024 Videos</a></li>
+      <li><a href="registration.html">Register</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="section page-hero">
+    <div class="container">
+      <p class="page-eyebrow">Program Preview</p>
+      <h1>Keynotes &amp; Agenda</h1>
+      <p>Explore the confirmed keynote speakers and discussion panels shaping the 2025 DC Privacy Summit. Detailed timing, networking breaks, and interactive sessions will be posted as they are finalized.</p>
+      <nav class="program-nav" aria-label="Program sections">
+        <a class="program-nav__link" href="#keynotes">Jump to Keynotes</a>
+        <a class="program-nav__link" href="#agenda">View Agenda</a>
+      </nav>
+    </div>
+  </section>
+
+  <section class="section" id="keynotes">
+    <div class="container">
+      <h2 class="lined-heading">Keynote Speakers</h2>
+      <p>Hear from the policy leaders, researchers, and builders shaping the next chapter of privacy-preserving technology. Each keynote speaker brings a unique vantage point on how cryptography, regulation, and user protections intersect.</p>
+
+      <div class="keynote-grid">
+        <article class="keynote-card program-card">
+          <div class="keynote-media">
+            <img loading="lazy" src="images/2025/speakers/hpeirce.png" alt="Hester Peirce">
+          </div>
+          <div class="keynote-body">
+            <p class="session-eyebrow session-eyebrow--keynote">Keynote Speaker</p>
+            <h3>Hester Peirce</h3>
+            <p class="keynote-role">Commissioner, US Securities and Exchange Commission</p>
+            <p class="keynote-bio">Commissioner Peirce—widely known as “Crypto Mom”—has been a consistent advocate for thoughtful, innovation-forward regulatory frameworks that help emerging privacy technologies flourish.</p>
+          </div>
+        </article>
+
+        <article class="keynote-card program-card">
+          <div class="keynote-media">
+            <img loading="lazy" src="images/2025/speakers/mattgreen.png" alt="Matt Green">
+          </div>
+          <div class="keynote-body">
+            <p class="session-eyebrow session-eyebrow--keynote">Keynote Speaker</p>
+            <h3>Matt Green</h3>
+            <p class="keynote-role">Professor of Computer Science, Johns Hopkins University</p>
+            <p class="keynote-bio">Professor Green co-founded the Johns Hopkins Information Security Institute and brings deep expertise in applied cryptography, secure messaging, and privacy-preserving protocols.</p>
+          </div>
+        </article>
+
+        <article class="keynote-card program-card">
+          <div class="keynote-media">
+            <img loading="lazy" src="images/2025/speakers/neha.png" alt="Neha Narula">
+          </div>
+          <div class="keynote-body">
+            <p class="session-eyebrow session-eyebrow--keynote">Keynote Speaker</p>
+            <h3>Neha Narula</h3>
+            <p class="keynote-role">Director, Digital Currency Initiative at MIT</p>
+            <p class="keynote-bio">As director of MIT’s Digital Currency Initiative, Narula leads interdisciplinary work on digital currency research, privacy, and resilient infrastructure for open financial systems.</p>
+          </div>
+        </article>
+
+        <article class="keynote-card program-card">
+          <div class="keynote-media">
+            <img loading="lazy" src="images/2025/speakers/Peter.webp" alt="Peter Van Valkenburgh">
+          </div>
+          <div class="keynote-body">
+            <p class="session-eyebrow session-eyebrow--keynote">Keynote Speaker</p>
+            <h3>Peter Van Valkenburgh</h3>
+            <p class="keynote-role">Executive Director, Coin Center</p>
+            <p class="keynote-bio">Van Valkenburgh has championed clear policy guardrails for privacy in digital assets, helping lawmakers and the public understand how civil liberties and compliance can coexist.</p>
+          </div>
+        </article>
+
+        <article class="keynote-card program-card">
+          <div class="keynote-media">
+            <img loading="lazy" src="images/2025/speakers/wd.png" alt="Wei Dai">
+          </div>
+          <div class="keynote-body">
+            <p class="session-eyebrow session-eyebrow--keynote">Keynote Speaker</p>
+            <h3>Wei Dai</h3>
+            <p class="keynote-role">Research Partner, 1kx</p>
+            <p class="keynote-bio">Dai focuses on advancing zero-knowledge systems and privacy-preserving infrastructure, offering a builder’s view on how cutting-edge research becomes usable tools.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="notice-card" role="note">
+        <p><strong>Program note:</strong> If the federal government remains shut down on October 16, Commissioner Peirce will be unable to attend the Privacy Summit.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="agenda">
+    <div class="container">
+      <h2 class="lined-heading">Summit Agenda</h2>
+      <div class="notice-card notice-card--accent" role="note">
+        <h3 class="notice-heading">What to expect</h3>
+        <ul class="notice-list notice-list--check">
+          <li>Keynote insights from regulators, builders, and researchers at the front line of privacy innovation.</li>
+          <li>Panel conversations that translate cutting-edge cryptography into practical policy frameworks.</li>
+          <li>A forthcoming detailed timetable with networking breaks, workshops, and side sessions.</li>
+        </ul>
+      </div>
+
+      <div class="agenda-schedule">
+        <article class="agenda-session program-card">
+          <p class="session-eyebrow">Discussion Panel</p>
+          <h3>How to Fight the Lazarus Group</h3>
+          <p>The crypto industry and the government have a common foe. Could they join forces? How?</p>
+          <div class="session-speakers">
+            <figure class="session-speaker">
+              <img loading="lazy" src="images/2025/speakers/Samczsun.png" alt="Samczsun">
+              <figcaption><strong>Samczsun</strong><span>Founder, Security Alliance (SEAL)</span></figcaption>
+            </figure>
+            <figure class="session-speaker">
+              <img loading="lazy" src="images/2025/speakers/Michael.webp" alt="Michael Mosier">
+              <figcaption><strong>Michael Mosier</strong><span>Co-Founder, Arktouros pllc</span></figcaption>
+            </figure>
+            <figure class="session-speaker">
+              <img loading="lazy" src="images/2025/speakers/Casey.webp" alt="Casey G.">
+              <figcaption><strong>Casey G.</strong><span>zeroShadow</span></figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="agenda-session program-card">
+          <p class="session-eyebrow">Discussion Panel</p>
+          <h3>What ZK Can—and Can’t—Do for You</h3>
+          <p>The promise of zero-knowledge cryptography is undeniable. But what specific problems can it address today in digital ID, age verification, privacy, and personal data security? What are its most important limitations?</p>
+          <div class="session-speakers">
+            <figure class="session-speaker">
+              <img loading="lazy" src="images/2025/speakers/Justin.webp" alt="Justin Thaler">
+              <figcaption><strong>Justin Thaler</strong><span>Research Partner, a16z</span></figcaption>
+            </figure>
+            <figure class="session-speaker">
+              <img loading="lazy" src="images/2025/speakers/abhishelat.png" alt="Abhi Shelat">
+              <figcaption><strong>Abhi Shelat</strong><span>Professor of Computer Science, Northeastern University</span></figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="agenda-session program-card">
+          <p class="session-eyebrow">Discussion Panel</p>
+          <h3>How to Avoid a Dystopian Digital ID System</h3>
+          <p>Governments worldwide are rolling out laws requiring age verification to access content, and the EU is advancing a digital ID wallet that alarms privacy advocates. What can technologists do to keep these tools from undermining personal data security?</p>
+          <div class="session-speakers">
+            <figure class="session-speaker">
+              <img loading="lazy" src="images/2025/speakers/yingtong.png" alt="Ying Tong Lai">
+              <figcaption><strong>Ying Tong Lai</strong><span>Independent Applied Cryptographer</span></figcaption>
+            </figure>
+            <figure class="session-speaker">
+              <img loading="lazy" src="images/2025/speakers/AislingConnolly.png" alt="Aisling Connolly">
+              <figcaption><strong>Aisling Connolly</strong><span>Chief Strategy Officer, TACEO</span></figcaption>
+            </figure>
+            <figure class="session-speaker">
+              <img loading="lazy" src="images/2025/speakers/Amal.png" alt="Amal Abraymi">
+              <figcaption><strong>Amal Abraymi</strong><span>Legal Counsel, Aztec</span></figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="agenda-session program-card">
+          <p class="session-eyebrow">Discussion Panel</p>
+          <h3>How Private Can a Stablecoin Be?</h3>
+          <p>The GENIUS Act asked the US Treasury to surface innovative methods for detecting illicit activity in digital assets. What do those methods look like, and what do they mean for user privacy? How private can a compliant stablecoin really be?</p>
+          <div class="session-speakers">
+            <figure class="session-speaker">
+              <img loading="lazy" src="images/2025/speakers/ian.png" alt="Ian Miers">
+              <figcaption><strong>Ian Miers</strong><span>Professor of Computer Science, University of Maryland</span></figcaption>
+            </figure>
+            <figure class="session-speaker">
+              <img loading="lazy" src="images/2025/speakers/laz.png" alt="Lizandro (Laz) Pieper">
+              <figcaption><strong>Lizandro (Laz) Pieper</strong><span>Research Director, DeFi Education Fund</span></figcaption>
+            </figure>
+            <figure class="session-speaker">
+              <img loading="lazy" src="images/2025/speakers/ross.png" alt="Ross Schulman">
+              <figcaption><strong>Ross Schulman</strong><span>Senior Policy &amp; Software Engineer, SpruceID</span></figcaption>
+            </figure>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer id="footer">
+  <div class="container footer-grid">
+    <div>
+      <img loading="lazy" src="images/DCPrivacySummit_wordmark_white.svg" alt="DC Privacy Summit logo" style="max-width:220px">
+      <p style="margin-top:10px">Where Privacy, Security, and Digital Identity Converge</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><i class="fas fa-chevron-right" aria-hidden="true"></i><a href="index.html#speakers">&nbsp; Speakers</a></li>
+        <li><i class="fas fa-chevron-right" aria-hidden="true"></i><a href="agenda.html">&nbsp; Agenda</a></li>
+        <li><i class="fas fa-chevron-right" aria-hidden="true"></i><a href="index.html#sponsors">&nbsp; Sponsors</a></li>
+        <li><i class="fas fa-chevron-right" aria-hidden="true"></i><a href="index.html#venue">&nbsp; Venue</a></li>
+        <li><i class="fas fa-chevron-right" aria-hidden="true"></i><a href="registration.html">&nbsp; Register</a></li>
+      </ul>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:40px">© <span id="year"></span> DC Privacy Summit. All rights reserved.</div>
+</footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
