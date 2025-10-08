@@ -210,6 +210,10 @@ nav a:focus-visible {
   isolation: isolate;
 }
 
+#agenda.section {
+  padding-top: clamp(40px, 8vh, 80px);
+}
+
 .section::before {
   content: "";
   position: absolute;

@@ -1,0 +1,63 @@
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/css/styles.css b/css/styles.css
+index baf326d57f41966eb287a660e839e9940d485a0a..20eee710ed5a02f7fe3d58a049108971df301e53 100644
+--- a/css/styles.css
++++ b/css/styles.css
+@@ -188,50 +188,54 @@ nav a:focus-visible {
+ 
+   .nav-menu ul {
+     flex-direction: column;
+     gap: 12px;
+   }
+ 
+   nav a {
+     font-size: 14px;
+     color: rgba(231, 239, 255, 0.92);
+   }
+ }
+ 
+ 
+ /* Utility */
+ .container {
+   max-width: var(--max-width);
+   margin: 0 auto;
+   padding: 0 20px;
+ }
+ .section {
+   padding: clamp(80px, 12vh, 120px) 0;
+   position: relative;
+   isolation: isolate;
+ }
+ 
++#agenda.section {
++  padding-top: clamp(40px, 8vh, 80px);
++}
++
+ .section::before {
+   content: "";
+   position: absolute;
+   inset: 0;
+   background: linear-gradient(135deg, rgba(0, 59, 121, 0.05), rgba(67, 56, 99, 0.05));
+   pointer-events: none;
+ }
+ 
+ .section > .container {
+   position: relative;
+   z-index: 1;
+ }
+ 
+ h1, h2, h3, h4, h5, h6 {
+   font-family: var(--font-heading);
+   font-weight: 600;
+   margin-bottom: 0.6em;
+ }
+ h1 {
+   font-size: 48px;
+   line-height: 1.1;
+ }
+ h2 {
+   font-size: 36px;
+   color: var(--color-primary);
+ 
+EOF
+)
