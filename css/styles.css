@@ -1160,27 +1160,55 @@ a:focus-visible {
 }
 
 
+
 .session-speakers--keynote-group {
-  align-items: stretch;
-  justify-content: center;
-  width: min(100%, 960px);
+  width: min(100%, 1040px);
   margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: clamp(28px, 4vw, 42px);
+  align-items: stretch;
+  justify-items: stretch;
 }
 
 .session-speakers--keynote-group > .lined-heading {
-  flex: 0 0 100%;
-  margin: 0 0 clamp(18px, 3vw, 26px);
+  margin: 0 0 clamp(22px, 3.5vw, 30px);
   grid-column: 1 / -1;
 }
 
-.session-speakers--keynote-group > .session-speaker {
-  align-items: flex-start;
-  flex: 0 1 260px;
-  max-width: 320px;
+.session-speaker--keynote {
+  display: grid;
+  grid-template-columns: clamp(110px, 18vw, 140px) 1fr;
+  gap: clamp(20px, 3.5vw, 32px);
+  align-items: center;
+  padding: clamp(22px, 3.8vw, 32px);
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(16, 34, 72, 0.08);
+  box-shadow: 0 16px 34px rgba(15, 23, 42, 0.1);
+  width: 100%;
 }
 
-.session-speakers--keynote-group .session-speaker figcaption {
-  gap: 6px;
+.session-speaker--keynote img {
+  width: clamp(110px, 18vw, 148px);
+  height: clamp(140px, 22vw, 188px);
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.18);
+}
+
+.session-speaker--keynote figcaption {
+  gap: clamp(8px, 1.8vw, 14px);
+  font-size: clamp(16px, 2vw, 18px);
+}
+
+.session-speaker--keynote figcaption strong {
+  font-size: clamp(20px, 2.4vw, 24px);
+}
+
+.session-speaker--keynote figcaption span {
+  font-size: clamp(16px, 2vw, 18px);
+  line-height: 1.45;
 }
 
 .session-speakers--keynote-group .session-eyebrow {
@@ -1217,11 +1245,14 @@ a:focus-visible {
   .session-speakers--keynote-group {
     width: 100%;
     margin-inline: 0;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(18px, 4vw, 24px);
   }
   .session-speakers--keynote-group > .lined-heading {
-    padding: 18px 20px;
-    margin: 0;
-    border-bottom: 1px solid rgba(16, 34, 72, 0.08);
+    padding: 0;
+    margin: 0 0 4px;
+    border-bottom: none;
   }
   .session-speakers > * {
     min-width: 0;
@@ -1251,6 +1282,31 @@ a:focus-visible {
   }
   .session-speaker figcaption strong {
     font-size: 16px;
+  }
+  .session-speaker--keynote {
+    grid-template-columns: 72px 1fr;
+    gap: 16px;
+    padding: 18px 20px;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(16, 34, 72, 0.08);
+    border-radius: var(--border-radius-sm);
+    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.12);
+  }
+  .session-speaker--keynote img {
+    width: 72px;
+    height: 92px;
+    border-radius: 18px;
+  }
+  .session-speaker--keynote figcaption {
+    gap: 6px;
+    font-size: 16px;
+  }
+  .session-speaker--keynote figcaption strong {
+    font-size: 18px;
+  }
+  .session-speaker--keynote figcaption span {
+    font-size: 15px;
+    line-height: 1.35;
   }
   .agenda-schedule > .agenda-session:first-of-type {
     margin-top: 18px;
