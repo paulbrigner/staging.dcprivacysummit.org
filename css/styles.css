@@ -770,7 +770,7 @@ a:focus-visible {
 
 /* Subpage Hero */
 .page-hero {
-  padding: clamp(56px, 13vh, 100px) 0 clamp(44px, 10vh, 96px);
+  padding: clamp(56px, 13vh, 100px) 0 clamp(32px, 8vh, 68px);
   background:
     radial-gradient(1100px 480px at -6% -12%, rgba(0, 59, 121, 0.28), transparent 70%),
     radial-gradient(900px 520px at 108% 18%, rgba(67, 56, 99, 0.24), transparent 75%),
@@ -824,6 +824,7 @@ a:focus-visible {
   background:
     linear-gradient(160deg, rgba(0, 59, 121, 0.08), rgba(67, 56, 99, 0.04)),
     rgba(255, 255, 255, 0.98);
+  padding-top: clamp(48px, 8vh, 72px);
 }
 #keynotes::before {
   background:
@@ -1153,6 +1154,34 @@ a:focus-visible {
   flex-wrap: wrap;
   gap: 16px;
 }
+
+
+.session-speakers--keynote-group {
+  align-items: stretch;
+  justify-content: center;
+  width: min(100%, 960px);
+  margin-inline: auto;
+}
+
+.session-speakers--keynote-group > .lined-heading {
+  flex: 0 0 100%;
+  margin: 0 0 clamp(18px, 3vw, 26px);
+  grid-column: 1 / -1;
+}
+
+.session-speakers--keynote-group > .session-speaker {
+  align-items: flex-start;
+  flex: 0 1 260px;
+  max-width: 320px;
+}
+
+.session-speakers--keynote-group .session-speaker figcaption {
+  gap: 6px;
+}
+
+.session-speakers--keynote-group .session-eyebrow {
+  margin-bottom: 4px;
+}
 .session-speaker {
   display: flex;
   align-items: center;
@@ -1180,6 +1209,15 @@ a:focus-visible {
     border: 1px solid rgba(16, 34, 72, 0.08);
     border-radius: 16px;
     overflow: hidden;
+  }
+  .session-speakers--keynote-group {
+    width: 100%;
+    margin-inline: 0;
+  }
+  .session-speakers--keynote-group > .lined-heading {
+    padding: 18px 20px;
+    margin: 0;
+    border-bottom: 1px solid rgba(16, 34, 72, 0.08);
   }
   .session-speakers > * {
     min-width: 0;
