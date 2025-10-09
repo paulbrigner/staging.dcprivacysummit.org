@@ -205,13 +205,13 @@ nav a:focus-visible {
   padding: 0 20px;
 }
 .section {
-  padding: clamp(80px, 12vh, 120px) 0;
+  padding: clamp(48px, 8vh, 96px) 0;
   position: relative;
   isolation: isolate;
 }
 
 #agenda.section {
-  padding-top: clamp(40px, 8vh, 80px);
+  padding-top: clamp(32px, 6vh, 64px);
 }
 
 .section::before {
@@ -1340,6 +1340,43 @@ a:focus-visible {
   color: var(--color-muted);
   font-size: 13px;
   line-height: 1.2;
+}
+
+.session-moderator {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 12px;
+}
+
+.session-moderator .session-speaker {
+  flex: 0 1 280px;
+}
+
+.session-speaker--moderator {
+  background: rgba(16, 34, 72, 0.06);
+  border: 1px solid rgba(16, 34, 72, 0.12);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+.session-speaker--moderator figcaption {
+  gap: 6px;
+}
+
+.session-moderator__role {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 12px;
+  color: var(--color-secondary);
+}
+
+@media (max-width: 640px) {
+  .session-moderator {
+    display: block;
+  }
+
+  .session-moderator .session-speaker {
+    width: 100%;
+  }
 }
 .session-footnote {
   font-size: 13px;
