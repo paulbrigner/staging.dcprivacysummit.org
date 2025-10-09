@@ -774,7 +774,7 @@ a:focus-visible {
 
 /* Subpage Hero */
 .page-hero {
-  padding: clamp(56px, 13vh, 100px) 0 clamp(32px, 8vh, 68px);
+  padding: clamp(56px, 13vh, 100px) 0 clamp(24px, 5vh, 40px);
   background:
     radial-gradient(1100px 480px at -6% -12%, rgba(0, 59, 121, 0.28), transparent 70%),
     radial-gradient(900px 520px at 108% 18%, rgba(67, 56, 99, 0.24), transparent 75%),
@@ -828,7 +828,7 @@ a:focus-visible {
   background:
     linear-gradient(160deg, rgba(0, 59, 121, 0.08), rgba(67, 56, 99, 0.04)),
     rgba(255, 255, 255, 0.98);
-  padding-top: clamp(48px, 8vh, 72px);
+  padding-top: clamp(16px, 3.5vh, 32px);
 }
 #keynotes::before {
   background:
@@ -1108,10 +1108,9 @@ a:focus-visible {
 
 /* Agenda */
 .agenda-schedule {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  margin-top: clamp(36px, 6vw, 54px);
+	display: flex;
+	flex-direction: column;
+	gap: 0;
 }
 .agenda-schedule > * {
   width: 100%;
