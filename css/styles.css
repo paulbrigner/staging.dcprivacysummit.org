@@ -1246,10 +1246,13 @@ a:focus-visible {
   width: fit-content;
 }
 .session-speakers {
+  --session-speaker-gap: clamp(10px, 1.8vw, 18px);
   display: flex;
   flex-wrap: wrap;
-  gap: clamp(10px, 1.8vw, 18px);
+  gap: var(--session-speaker-gap);
   align-items: stretch;
+  justify-content: flex-start;
+  max-width: min(100%, 780px);
 }
 
 
@@ -1324,7 +1327,7 @@ a:focus-visible {
   border-radius: var(--border-radius-sm);
   border: 1px solid rgba(16, 34, 72, 0.1);
   box-shadow: none;
-  flex: 1 1 auto;
+  width: 100%;
 }
 .session-speaker img {
   width: 64px;
@@ -1334,9 +1337,13 @@ a:focus-visible {
   box-shadow: none;
 }
 .session-speakers > * {
-  flex: 1 1 260px;
-  min-width: 200px;
-  max-width: 340px;
+  flex: 1 0 calc(50% - var(--session-speaker-gap));
+  min-width: 240px;
+  max-width: 360px;
+}
+.session-speakers > *:only-child {
+  flex: 0 0 auto;
+  max-width: 360px;
 }
 @media (max-width: 640px) {
   .agenda-schedule {
@@ -1346,6 +1353,7 @@ a:focus-visible {
   .session-speakers {
     display: grid;
     gap: 0;
+    grid-template-columns: 1fr;
     background: rgba(255, 255, 255, 0.82);
     border: 1px solid rgba(16, 34, 72, 0.08);
     border-radius: 16px;
