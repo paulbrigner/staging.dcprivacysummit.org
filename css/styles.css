@@ -1175,35 +1175,55 @@ a:focus-visible {
 
 /* Agenda */
 .agenda-schedule {
-	display: flex;
-	flex-direction: column;
-	gap: 0;
+  --agenda-time-column: clamp(108px, 20vw, 150px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1.6vw, 18px);
+  margin-top: clamp(18px, 3vw, 28px);
 }
 .agenda-schedule > * {
   width: 100%;
 }
-.agenda-schedule > .agenda-session:first-of-type {
-  margin-top: clamp(22px, 4vw, 30px);
-}
 .agenda-session {
+  display: grid;
+  grid-template-columns: var(--agenda-time-column) minmax(0, 1fr);
+  column-gap: clamp(16px, 3vw, 34px);
+  padding: clamp(14px, 2.4vw, 20px) 0;
   min-width: 0;
+  border-bottom: 1px solid rgba(16, 34, 72, 0.12);
+}
+.agenda-session:last-of-type {
+  border-bottom: none;
+}
+.agenda-session__time {
+  grid-column: 1;
+  font-weight: 600;
+  color: var(--color-secondary);
+  text-align: right;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 .agenda-session h3 {
-  margin: 0;
+  grid-column: 2;
+  margin: 0 0 clamp(8px, 1.4vw, 12px);
+}
+.agenda-session .session-speakers,
+.agenda-session .session-moderator {
+  grid-column: 2;
 }
 .agenda-session p {
   margin: 0;
 }
-.agenda-session + .agenda-session {
-  margin-top: clamp(28px, 5vw, 40px);
-}
-.agenda-session + .agenda-session::before {
-  content: "";
-  display: block;
-  height: 1px;
-  background: linear-gradient(90deg, rgba(16, 34, 72, 0), rgba(16, 34, 72, 0.24), rgba(16, 34, 72, 0));
-  margin-bottom: clamp(18px, 3vw, 26px);
-  border-radius: 999px;
+@media (max-width: 720px) {
+  .agenda-session {
+    grid-template-columns: 1fr;
+    row-gap: 12px;
+    padding: clamp(12px, 4vw, 18px) 0;
+  }
+  .agenda-session__time {
+    text-align: left;
+    letter-spacing: 0.06em;
+  }
 }
 .session-eyebrow {
   display: inline-flex;
@@ -1222,7 +1242,8 @@ a:focus-visible {
 .session-speakers {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: clamp(10px, 1.8vw, 18px);
+  align-items: stretch;
 }
 
 
@@ -1291,17 +1312,25 @@ a:focus-visible {
 .session-speaker {
   display: flex;
   align-items: center;
-  gap: 14px;
-  padding: 12px 16px;
-  background: rgba(255, 255, 255, 0.96);
+  gap: 12px;
+  padding: 10px 14px;
+  background: rgba(16, 34, 72, 0.04);
   border-radius: var(--border-radius-sm);
-  border: 1px solid rgba(16, 34, 72, 0.08);
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
-  flex: 0 1 auto;
+  border: 1px solid rgba(16, 34, 72, 0.1);
+  box-shadow: none;
+  flex: 1 1 auto;
+}
+.session-speaker img {
+  width: 64px;
+  height: 80px;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: none;
 }
 .session-speakers > * {
-  flex: 1 1 240px;
+  flex: 1 1 260px;
   min-width: 200px;
+  max-width: 340px;
 }
 @media (max-width: 640px) {
   .agenda-schedule {
