@@ -507,6 +507,13 @@ a:focus-visible {
   color: var(--brand-red);
 }
 
+.btn.btn--accent:hover,
+.btn.btn--accent:focus-visible {
+  box-shadow: 0 24px 42px rgba(238, 57, 44, 0.28);
+  background-color: #c32f23;
+  color: var(--brand-blue);
+}
+
 /* 3C – Logo block */
 .hero-media {
   position: relative;
