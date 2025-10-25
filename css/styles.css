@@ -380,12 +380,13 @@ a:focus-visible {
 }
 
 .video-wrapper--playlist {
-  min-height: clamp(420px, 60vw, 560px);
+  padding-top: 0;
+  height: clamp(420px, 60vw, 560px);
 }
 
 @media (max-width: 640px) {
   .video-wrapper--playlist {
-    min-height: clamp(420px, 75vw, 520px);
+    height: clamp(400px, 90vw, 520px);
   }
 }
 
