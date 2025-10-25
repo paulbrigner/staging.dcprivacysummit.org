@@ -132,6 +132,49 @@ nav a:focus-visible {
   outline: none;
 }
 
+.nav-menu ul li {
+  position: relative;
+}
+
+.nav-menu ul li .submenu {
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  min-width: 160px;
+  padding: 16px;
+  list-style: none;
+  border-radius: var(--border-radius-sm);
+  background: linear-gradient(155deg, rgba(9, 15, 43, 0.97), rgba(4, 9, 33, 0.96));
+  box-shadow: 0 20px 40px rgba(3, 7, 18, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 999;
+}
+
+.nav-menu ul li.has-submenu:hover > .submenu,
+.nav-menu ul li.has-submenu:focus-within > .submenu {
+  display: flex;
+}
+
+.nav-menu ul li .submenu a {
+  text-transform: none;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  padding: 6px 0;
+  color: rgba(231, 239, 255, 0.92);
+}
+
+.nav-menu ul li .submenu a::after {
+  display: none;
+}
+
+.nav-menu ul li .submenu a:hover,
+.nav-menu ul li .submenu a:focus-visible {
+  color: #ffffff;
+}
+
 /* Hamburger toggle button */
 .menu-toggle {
   display: none;
@@ -189,6 +232,22 @@ nav a:focus-visible {
   .nav-menu ul {
     flex-direction: column;
     gap: 12px;
+  }
+
+  .nav-menu ul li .submenu {
+    display: flex;
+    position: static;
+    padding: 8px 0 0 0;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    gap: 4px;
+  }
+
+  .nav-menu ul li .submenu a {
+    font-size: 12px;
+    padding: 4px 0 4px 12px;
+    border-left: 2px solid rgba(255, 255, 255, 0.24);
   }
 
   nav a {

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Watch every session from the 2024 DC Privacy Summit.">
+  <meta property="og:title" content="2024 Summit Videos – DC Privacy Summit">
+  <meta property="og:description" content="Stream the full 2024 DC Privacy Summit playlist.">
+  <meta property="og:image" content="https://dcprivacysummit.org/images/logo_300x300.png">
+  <meta property="og:url" content="https://dcprivacysummit.org/videos/2024/">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="../../fonts/fontawesome/css/all.min.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="manifest" href="../../site.webmanifest">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <title>2024 Summit Videos – DC Privacy Summit</title>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&amp;family=Poppins:wght@500&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
+  <link href="../../css/styles.css" rel="stylesheet">
+</head>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (menuToggle && navMenu) {
+      menuToggle.addEventListener('click', () => {
+        const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', String(!expanded));
+        navMenu.classList.toggle('active');
+      });
+    }
+  });
+</script>
+
+<body>
+<!-- Header -->
+<header>
+  <a href="/"><img src="../../images/DCPrivacySummit_wordmark_white.svg" alt="DC Privacy Summit logo" class="logo"></a>
+  <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+  <nav aria-label="Main" class="nav-menu">
+    <ul>
+      <li><a href="/speaker-bios.html">Speakers</a></li>
+      <li><a href="/agenda.html">Agenda</a></li>
+      <li><a href="/index.html#sponsors">Sponsors</a></li>
+      <li><a href="/index.html#venue">Venue</a></li>
+      <li><a href="/index.html#contact">Contact</a></li>
+      <li class="has-submenu">
+        <a href="/videos/2025/index.html">Videos</a>
+        <ul class="submenu">
+          <li><a href="/videos/2024/index.html" aria-current="page">2024</a></li>
+          <li><a href="/videos/2025/index.html">2025</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="section page-hero">
+    <div class="container">
+      <p class="page-eyebrow">Summit Archives</p>
+      <h1>2024 Summit Videos</h1>
+      <p>Revisit every conversation from the inaugural DC Privacy Summit with the full session playlist.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube-nocookie.com/embed/videoseries?si=uK40hpa-AEcbTevt&amp;list=PLWmtTg-WFLv6t3LD-nyP2LLrmLxvo4aAf" title="2024 DC Privacy Summit Playlist" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer id="footer">
+  <div class="container footer-grid">
+    <div>
+      <img loading="lazy" src="../../images/DCPrivacySummit_wordmark_white.svg" alt="DC Privacy Summit logo" style="max-width:220px">
+      <p style="margin-top:10px">Where Privacy, Security, and Digital Identity Converge</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><i class="fas fa-chevron-right" aria-hidden="true"></i><a href="/index.html#speakers">&nbsp; Speakers</a></li>
+        <li><i class="fas fa-chevron-right" aria-hidden="true"></i><a href="/agenda.html">&nbsp; Agenda</a></li>
+        <li><i class="fas fa-chevron-right" aria-hidden="true"></i><a href="/index.html#sponsors">&nbsp; Sponsors</a></li>
+        <li><i class="fas fa-chevron-right" aria-hidden="true"></i><a href="/index.html#venue">&nbsp; Venue</a></li>
+        <li><i class="fas fa-chevron-right" aria-hidden="true"></i><a href="/index.html#contact">&nbsp; Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:40px">© <span id="year"></span> DC Privacy Summit. All rights reserved.</div>
+</footer>
+</body>
+</html>
