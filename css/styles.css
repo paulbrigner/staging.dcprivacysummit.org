@@ -141,7 +141,7 @@ nav a:focus-visible {
   flex-direction: column;
   gap: 8px;
   position: absolute;
-  top: calc(100% + 12px);
+  top: calc(100% + 8px);
   left: 0;
   min-width: 160px;
   padding: 16px;
@@ -173,6 +173,18 @@ nav a:focus-visible {
 .nav-menu ul li .submenu a:hover,
 .nav-menu ul li .submenu a:focus-visible {
   color: #ffffff;
+}
+
+@media (min-width: 769px) {
+  .nav-menu ul li.has-submenu::after {
+    content: "";
+    position: absolute;
+    left: -10px;
+    right: -10px;
+    top: 100%;
+    height: 18px;
+    pointer-events: none;
+  }
 }
 
 /* Hamburger toggle button */
