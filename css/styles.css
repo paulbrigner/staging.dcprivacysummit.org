@@ -379,6 +379,16 @@ a:focus-visible {
   border: 0;
 }
 
+.video-wrapper--playlist {
+  min-height: clamp(420px, 60vw, 560px);
+}
+
+@media (max-width: 640px) {
+  .video-wrapper--playlist {
+    min-height: clamp(420px, 75vw, 520px);
+  }
+}
+
 
 /* ---------- HERO REBUILD ---------- */
 .hero {
