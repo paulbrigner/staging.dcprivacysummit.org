@@ -442,6 +442,11 @@
         <label for="message">Message</label>
         <textarea id="message" name="message" rows="5" required></textarea>
 
+        <div class="contact-form__honeypot" aria-hidden="true">
+          <label for="contactWebsite">Leave this field empty</label>
+          <input type="text" id="contactWebsite" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
         <button type="submit" id="submitButton" class="btn btn--secondary contact-form__submit">Send&nbsp;Message</button>
       </form>
       <div id="responseMessage"></div>
@@ -491,19 +496,42 @@ document.getElementById('year').textContent = new Date().getFullYear();
 const contactForm = document.getElementById('contactForm');
 const responseMessage = document.getElementById('responseMessage');
 const submitButton = document.getElementById('submitButton');
+const honeypotField = document.getElementById('contactWebsite');
+const MIN_SUBMIT_DELAY_MS = 3000;
+let formReadyTimestamp = Date.now();
 
 if (contactForm) {
   contactForm.addEventListener('submit', async (event) => {
     event.preventDefault();
-    submitButton.disabled = true;
-    submitButton.textContent = 'Sending...';
     responseMessage.textContent = '';
+    responseMessage.classList.remove('success', 'error');
 
-    const data = {
+    if (honeypotField && honeypotField.value.trim() !== '') {
+      responseMessage.textContent = 'Submission blocked. Please try again.';
+      responseMessage.classList.add('error');
+      return;
+    }
+
+    const now = Date.now();
+
+    if (now - formReadyTimestamp < MIN_SUBMIT_DELAY_MS) {
+      responseMessage.textContent = 'Please take a moment to complete the form before submitting.';
+      responseMessage.classList.add('error');
+      return;
+    }
+
+    const submittedAt = new Date();
+    const payload = {
       name: contactForm.name.value,
       email: contactForm.email.value,
-      message: contactForm.message.value
+      message: contactForm.message.value,
+      website: honeypotField ? honeypotField.value : '',
+      formReadyAt: new Date(formReadyTimestamp).toISOString(),
+      submittedAt: submittedAt.toISOString()
     };
+
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending...';
 
     const lambdaUrl = 'https://uugg54xnazzywuntowoh363gme0dqdev.lambda-url.us-east-1.on.aws/';
 
@@ -511,7 +539,7 @@ if (contactForm) {
       const response = await fetch(lambdaUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
+        body: JSON.stringify(payload)
       });
       const result = await response.json();
 
@@ -520,19 +548,28 @@ if (contactForm) {
         responseMessage.classList.remove('error');
         responseMessage.classList.add('success');
         contactForm.reset();
+        if (honeypotField) {
+          honeypotField.value = '';
+        }
+        formReadyTimestamp = Date.now();
       } else {
         responseMessage.textContent = `Error: ${result.message || 'An unknown error occurred.'}`;
         responseMessage.classList.remove('success');
         responseMessage.classList.add('error');
+        formReadyTimestamp = Date.now();
       }
     } catch (error) {
       console.error('Submission error:', error);
       responseMessage.textContent = 'Failed to send message. Please check your connection.';
       responseMessage.classList.remove('success');
       responseMessage.classList.add('error');
+      formReadyTimestamp = Date.now();
     } finally {
       submitButton.disabled = false;
       submitButton.textContent = 'Send Message';
+      if (!responseMessage.classList.contains('success')) {
+        formReadyTimestamp = Date.now();
+      }
     }
     });
   }
